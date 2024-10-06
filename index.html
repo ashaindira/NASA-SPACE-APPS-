@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Health Monitoring</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        label, input, select {
+            display: block;
+            margin-bottom: 10px;
+            padding: 8px;
+            width: 100%;
+        }
+        button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        img {
+            margin-top: 20px;
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Crop Health Monitoring</h1>
+
+    <form method="POST">
+        <label for="lat">Latitude:</label>
+        <input type="text" id="lat" name="lat" placeholder="Enter latitude" required>
+
+        <label for="lon">Longitude:</label>
+        <input type="text" id="lon" name="lon" placeholder="Enter longitude" required>
+
+        <label for="date">Date (YYYY-MM-DD):</label>
+        <input type="date" id="date" name="date" required>
+
+        <label for="layer">Layer:</label>
+        <select id="layer" name="layer" required>
+            <option value="NDVI">NDVI (Vegetation Index)</option>
+            <option value="TRUE_COLOR">True Color</option>
+            <option value="EVI">Enhanced Vegetation Index (EVI)</option>
+        </select>
+
+        <button type="submit">Fetch Crop Health Data</button>
+    </form>
+
+    {% if satellite_image_url %}
+        <h2>Satellite Image</h2>
+        <img src="{{ satellite_image_url }}" alt="Satellite Image">
+    {% endif %}
+</body>
+</html>
