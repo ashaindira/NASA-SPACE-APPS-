@@ -4,8 +4,8 @@ import requests
 app = Flask(__name__)
 
 # Sentinel Hub credentials (replace with your credentials)
-SENTINEL_HUB_INSTANCE_ID = "ee0cb4f8-8cf6-4a98-9c1e-8549146b51a2"  # Replace with your Sentinel Hub instance ID
-SENTINEL_HUB_WMS_URL = f"https://services.sentinel-hub.com/configuration/v1/wms/instances/ee0cb4f8-8cf6-4a98-9c1e-8549146b51a2"
+SENTINEL_HUB_INSTANCE_ID = "your_id"  # Replace with your Sentinel Hub instance ID
+SENTINEL_HUB_WMS_URL = "your_url"
 @app.route('/', methods=['GET', 'POST'])
 def index():
     print("Accessed the index page")
